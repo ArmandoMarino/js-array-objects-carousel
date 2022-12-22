@@ -28,8 +28,8 @@ const dataObj = [
 
 // PRENDO I DATI DAL DOM
 // GALLERY
-const gallery = document.querySelector('.gallery');
-console.log(gallery);
+const row = document.getElementById('img-wrapper');
+console.log(row);
 
 // BUTTONS NEXT AND PREV
 const prev = document.getElementById('prev');
@@ -43,28 +43,34 @@ const next = document.getElementById('next');
 //   }
 
 // VARIABILE D'APPOGGIO
-// let myList = "";
+let myList = "";
 
-// // CICLO FINCHE'
-// let i = 0;
-// while (i < dataObj.length){
-//     console.log(dataObj[i]);
+// CICLO FINCHE'
+let i = 0;
+while (i < dataObj.length){
+    console.log(dataObj[i]);
 
-//     myList += `
-//     <div class="col-8 gallery d-block">
-//         <img class="" src="img/01.webp" alt="Spiderman">
-//         <div class="img-text">
-//             <h5>Marvel\'s Spiderman Miles Morale</h5>
-//             <p>Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.</p>
-//         </div>
-//     </div>`;
-//     i++;
-// }
+    myList += `
+    <div class="col-8 gallery">
+        <img class="" src="img/01.webp" alt="Spiderman">
+        <div class="img-text">
+            <h5>Marvel\'s Spiderman Miles Morale</h5>
+            <p>Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.</p>
+        </div>
+    </div>`;
+    i++;
+}
 
-// gallery.innerHTML = myList;
+row.innerHTML = myList;
 
-// // IMG
-// let currentActiveIndex = 0;
-// const images = document.querySelectorAll('.gallery .col-8')
-// currentActiveIndex++;
-// images[currentActiveIndex].classList.add('d-block');
+// IMG
+
+let currentActiveIndex = 0;
+const images = document.querySelectorAll('.gallery')
+
+
+next.addEventListener('click', function (){
+    images[currentActiveIndex].classList.add('active');
+
+    currentActiveIndex++;
+});
