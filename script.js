@@ -65,10 +65,9 @@ while (i < dataObj.length){
 row.innerHTML = myList;
 
 // IMG
+const images = document.querySelectorAll('.gallery')
 
 let currentActiveIndex = 0;
-
-const images = document.querySelectorAll('.gallery')
 
 images[currentActiveIndex].classList.add('active');
 
