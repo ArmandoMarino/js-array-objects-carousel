@@ -1,7 +1,7 @@
 console.log('JS OK');
 
 
-const data = [
+const dataObj = [
   {
     image: 'img/01.webp',
     title: 'Marvel\'s Spiderman Miles Morale',
@@ -24,3 +24,42 @@ const data = [
     text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
   }
 ];
+
+
+// PRENDO I DATI DAL DOM
+// GALLERY
+const gallery = document.querySelector('.gallery');
+console.log(gallery);
+
+// BUTTONS NEXT AND PREV
+const prev = document.getElementById('prev');
+
+const next = document.getElementById('next');
+
+// IMG
+const images = document.querySelectorAll('.gallery img')
+
+const hello = () => {
+    return "Hello World!";
+  }
+
+// VARIABILE D'APPOGGIO
+let myList = "";
+
+// CICLO FINCHE'
+let i = 0;
+while (i < dataObj.length){
+    console.log(dataObj[i]);
+
+    myList += `
+    <div class="col-8 gallery">
+        <img class="" src="img/01.webp" alt="Spiderman">
+        <div class="img-text">
+            <h5>Marvel\'s Spiderman Miles Morale</h5>
+            <p>Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.</p>
+        </div>
+    </div>`;
+    i++;
+}
+
+gallery.innerHTML = myList;
