@@ -1,5 +1,6 @@
 
 .container{
+    width: 100%;
     position: relative;
 }
 
@@ -39,12 +40,11 @@
 /* BUTTONS */
 #prev{
     position: absolute;
-    left: 0;
-    top: 0;
+    right: 100px;
+    top: 65px;
 }
 
 #next{
     position: absolute;
-    left: 0;
-    bottom: 0;
-}
+    right: 100px;
+    bottom: 15px;}

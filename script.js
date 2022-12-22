@@ -66,11 +66,15 @@ row.innerHTML = myList;
 // IMG
 
 let currentActiveIndex = 0;
+
 const images = document.querySelectorAll('.gallery')
+
+images[currentActiveIndex].classList.add('active');
 
 
 next.addEventListener('click', function (){
-    images[currentActiveIndex].classList.add('active');
+    
 
     currentActiveIndex++;
+    images[currentActiveIndex].classList.add('active');
 });
