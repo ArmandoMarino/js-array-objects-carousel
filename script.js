@@ -33,9 +33,10 @@ console.log(row);
 
 // BUTTONS NEXT AND PREV
 const prev = document.getElementById('prev');
+console.log(prev);
 
 const next = document.getElementById('next');
-
+console.log(next);
 
 // TODO FUNCTION
 // const hello = () => {
@@ -52,10 +53,10 @@ while (i < dataObj.length){
 
     myList += `
     <div class="col-8 gallery">
-        <img class="" src="img/01.webp" alt="Spiderman">
+        <img class="" src="${dataObj[i].image}">
         <div class="img-text">
-            <h5>Marvel\'s Spiderman Miles Morale</h5>
-            <p>Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.</p>
+            <h5>${dataObj[i].title}</h5>
+            <p>${dataObj[i].text}</p>
         </div>
     </div>`;
     i++;
@@ -73,8 +74,29 @@ images[currentActiveIndex].classList.add('active');
 
 
 next.addEventListener('click', function (){
-    
+
+    images[currentActiveIndex].classList.remove('active');
+
 
     currentActiveIndex++;
+
+    if(currentActiveIndex === dataObj.length){
+        currentActiveIndex = 0;
+    }
+
+    images[currentActiveIndex].classList.add('active');
+});
+
+
+prev.addEventListener('click', function (){
+
+    images[currentActiveIndex].classList.remove('active');
+
+    currentActiveIndex--;
+
+    if(currentActiveIndex < 0 ){
+        currentActiveIndex = dataObj.length - 1;
+    }
+
     images[currentActiveIndex].classList.add('active');
 });
