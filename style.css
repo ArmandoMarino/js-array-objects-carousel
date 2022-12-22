@@ -8,6 +8,7 @@
     height: 300px;
     position: relative;
     margin-top: 50px;
+    display: none;
 }
 
 #img-wrapper{
@@ -20,7 +21,9 @@
     object-fit: cover;
 }
 
-
+.active{
+    display: block;
+}
 
 /* TEXT IMAGE */
 .gallery .img-text{
