@@ -62,7 +62,7 @@ while (i < dataObj.length){
     i++;
 }
 
-row.innerHTML = myList;
+row.innerHTML += myList;
 
 // IMG
 const images = document.querySelectorAll('.gallery')
